@@ -1,0 +1,176 @@
+{
+  "users": [
+    {
+      "email": "hola@gmail.com",
+      "password": "$2a$10$VS20PHhOwuARQeJUUAFu.u.Abnkx6MIoebFeabebUvBUXj5KBU9KO",
+      "name": "cfgnfg",
+      "lastName": "nfgn",
+      "department": "nfgnr",
+      "rol": "1",
+      "status": "activo",
+      "profession": "ffgnf",
+      "createdAt": "2025-11-29",
+      "id": 2
+    },
+    {
+      "email": "keiner@gmail.com",
+      "password": "$2a$10$e3wiuORS68LfA0Yr2qc.GuAiBflHCroH0hFI.MDe4asTZmBILx94.",
+      "name": "Keiner",
+      "lastName": "Jaramillo",
+      "department": "Sena",
+      "rol": "1",
+      "status": "activo",
+      "profession": "Desarrollador",
+      "createdAt": "2025-11-30",
+      "id": 3,
+      "image": "https://res.cloudinary.com/dcvou39ys/image/upload/v1764479278/emma-img/ugblod6ylgbzbudq3gyx.jpg",
+      "public_id": "emma-img/ugblod6ylgbzbudq3gyx",
+      "documents": [
+        {
+          "id": "documentos/huellas_xwrs1k.docx",
+          "name": "huellas",
+          "url": "https://res.cloudinary.com/dcvou39ys/raw/upload/v1764810533/documentos/huellas_xwrs1k.docx",
+          "size": "1639.0 KB",
+          "date": "2025-12-04T01:08:57.973Z"
+        }
+      ]
+    },
+    {
+      "email": "loca@gmail.com",
+      "password": "$2a$10$9Fj/f7Ghp7gAWLfNDigUw.5YpOeu15cIlb.kRsGzvPxEvT4U/wvx.",
+      "name": "Miguel",
+      "lastName": "Rivera",
+      "department": "Loca",
+      "rol": "1",
+      "status": "activo",
+      "profession": "Loco",
+      "image": "https://res.cloudinary.com/dcvou39ys/image/upload/v1764721007/emma-img/wrkpefggqvztbittwzdy.webp",
+      "createdAt": "2025-12-03",
+      "id": 4,
+      "public_id": "emma-img/wrkpefggqvztbittwzdy"
+    },
+    {
+      "email": "juandavila926@gmail.com",
+      "password": "$2a$10$FiTTd3WkQBItxm6H.dpc1.i6prqX48Rmbm36YY5Wp3haJ9yx/wllm",
+      "name": "Juan Manuel",
+      "lastName": "Dávila Cuartas",
+      "department": "Recursos Humanos",
+      "rol": "1",
+      "status": "activo",
+      "profession": "Desarrollador full stack",
+      "image": "https://res.cloudinary.com/dcvou39ys/image/upload/v1764810721/emma-img/bvkmpqlotv38awtlircz.webp",
+      "createdAt": "2025-12-04",
+      "id": 5,
+      "public_id": "emma-img/bvkmpqlotv38awtlircz",
+      "documents": [
+        {
+          "id": "documentos/Folleto_Informativo_o8snrv",
+          "name": "Folleto Informativo",
+          "url": "https://res.cloudinary.com/dcvou39ys/image/upload/v1764810940/documentos/Folleto_Informativo_o8snrv.pdf",
+          "type": "pdf",
+          "size": "2180.1 KB",
+          "date": "2025-12-04T01:17:47.210Z"
+        }
+      ]
+    }
+  ],
+  "roles": [
+    {
+      "name": "admin",
+      "description": "Todo",
+      "status": "activo",
+      "permissions": [
+        {
+          "entidad": "usuarios",
+          "acciones": {
+            "ver": true,
+            "crear": true,
+            "editar": true,
+            "eliminar": true
+          }
+        },
+        {
+          "entidad": "roles",
+          "acciones": {
+            "ver": true,
+            "crear": true,
+            "editar": true,
+            "eliminar": true
+          }
+        },
+        {
+          "entidad": "productos",
+          "acciones": {
+            "ver": true,
+            "crear": true,
+            "editar": true,
+            "eliminar": true
+          }
+        },
+        {
+          "entidad": "ventas",
+          "acciones": {
+            "ver": true,
+            "crear": true,
+            "editar": true,
+            "eliminar": true
+          }
+        },
+        {
+          "entidad": "clientes",
+          "acciones": {
+            "ver": true,
+            "crear": true,
+            "editar": true,
+            "eliminar": true
+          }
+        },
+        {
+          "entidad": "inventario",
+          "acciones": {
+            "ver": true,
+            "crear": true,
+            "editar": true,
+            "eliminar": true
+          }
+        },
+        {
+          "entidad": "reportes",
+          "acciones": {
+            "ver": true,
+            "crear": true,
+            "editar": true,
+            "eliminar": true
+          }
+        },
+        {
+          "entidad": "configuracion",
+          "acciones": {
+            "ver": true,
+            "crear": true,
+            "editar": true,
+            "eliminar": true
+          }
+        }
+      ],
+      "users": 38,
+      "id": 1
+    }
+  ],
+  "donantes": [
+    {
+      "name": "Keiner Jaramillo",
+      "personType": "natural",
+      "idCard": "1045431954",
+      "nit": "",
+      "contactPerson": "Keiner",
+      "phone": "300000000",
+      "email": "keinerjaramillo@gmail.com",
+      "address": "calle 50 #45-32",
+      "city": "Medellín",
+      "createdAt": "2025-11-24",
+      "id": 1
+    }
+  ],
+  "donaciones": []
+}
