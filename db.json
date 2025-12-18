@@ -24,14 +24,14 @@
       "createdAt": "2025-11-30",
       "id": 3,
       "image": "https://res.cloudinary.com/dcvou39ys/image/upload/v1764479278/emma-img/ugblod6ylgbzbudq3gyx.jpg",
-      "public_id": "emma-img/ugblod6ylgbzbudq3gyx",
       "documents": [
         {
-          "id": "documentos/huellas_xwrs1k.docx",
-          "name": "huellas",
-          "url": "https://res.cloudinary.com/dcvou39ys/raw/upload/v1764810533/documentos/huellas_xwrs1k.docx",
-          "size": "1639.0 KB",
-          "date": "2025-12-04T01:08:57.973Z"
+          "id": "documentos/foto_1.docx",
+          "name": "foto (1).docx",
+          "url": "https://api.cloudinary.com/v1_1/dcvou39ys/raw/download?timestamp=1766016014&public_id=documentos%2Ffoto_1.docx&expires_at=1766016314&signature=897a62b7f3cbfba562ecc9d1cb76d47bd27fa706&api_key=667351547483965",
+          "type": "docx",
+          "size": "158.9 KB",
+          "date": "2025-12-18T00:00:14.048Z"
         }
       ]
     },

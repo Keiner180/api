@@ -7,7 +7,10 @@ const bcrypt = require("bcrypt");
 const cloudinary = require("./cloudinary");
 const multer = require("multer");
 const upload = multer();
-const db = require("./db.json"); // tu db.json local
+const db = require("./db.json");
+const stream = require("stream");
+const { log } = require("console");
+
 
 const server = jsonServer.create();
 const router = jsonServer.router("db.json");
@@ -17,6 +20,7 @@ const middlewares = jsonServer.defaults();
 server.use(cors({
     origin: [
         "http://localhost:5173",
+        "http://localhost:5174",
         "https://emma-25413.web.app"
     ],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
@@ -77,6 +81,79 @@ server.post("/upload", upload.single("file"), async (req, res) => {
         res.status(500).json({ error: "Error subiendo imagen" });
     }
 });
+
+server.post("/upload-document", upload.single("file"), (req, res) => {
+    const file = req.file;
+    if (!file) return res.status(400).json({ error: "Archivo requerido" });
+
+    const bufferStream = new stream.PassThrough();
+    bufferStream.end(file.buffer);
+
+    cloudinary.uploader.upload_stream(
+        {
+            resource_type: "raw",
+            folder: "documentos",
+            use_filename: true,
+            unique_filename: false,
+            filename_override: file.originalname,
+            type: "authenticated",
+        },
+        (error, result) => {
+            if (error) {
+                console.error(error);
+                return res.status(500).json({ error: "Error subiendo documento" });
+            }
+
+            // URL temporal válida 5 min
+            const tempUrl = cloudinary.utils.private_download_url(
+                result.public_id,
+                null,
+                {
+                    resource_type: "raw",
+                    expires_at: Math.floor(Date.now() / 1000) + 300,
+                }
+            );
+
+            res.json({
+                public_id: result.public_id,  // Ej: "documentos/foto_1.docx"
+                original_name: file.originalname,
+                size: result.bytes,
+                format: result.format,
+                url: tempUrl,
+            });
+        }
+    ).end(file.buffer);
+});
+
+// =====================
+// 2️⃣ Endpoint: Obtener URL temporal de un documento existente
+// =====================
+server.get("/document/:publicId/download", (req, res) => {
+  const publicId = decodeURIComponent(req.params.publicId);
+
+  try {
+    const url = cloudinary.utils.private_download_url(
+      publicId,
+      null,
+      { resource_type: "raw", expires_at: Math.floor(Date.now()/1000)+300 }
+    );
+
+    // Redirigir al navegador a la URL temporal
+    res.redirect(url);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "No se pudo generar la URL" });
+  }
+});
+
+
+
+
+
+
+
+
+
 
 // --- Eliminar imagen de Cloudinary ---
 server.delete("/delete-image/:folder/:id", async (req, res) => {
