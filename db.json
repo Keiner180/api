@@ -26,12 +26,68 @@
       "image": "https://res.cloudinary.com/dcvou39ys/image/upload/v1764479278/emma-img/ugblod6ylgbzbudq3gyx.jpg",
       "documents": [
         {
-          "id": "documentos/foto_1.docx",
-          "name": "foto (1).docx",
-          "url": "https://api.cloudinary.com/v1_1/dcvou39ys/raw/download?timestamp=1766016014&public_id=documentos%2Ffoto_1.docx&expires_at=1766016314&signature=897a62b7f3cbfba562ecc9d1cb76d47bd27fa706&api_key=667351547483965",
+          "id": "documentos/boletin_PAULINA_CASTAÃ_O_VERGARA_2025_tjr9kz.pdf",
+          "name": "boletin_PAULINA_CASTAÑO_VERGARA_2025.pdf",
+          "url": "https://res.cloudinary.com/dcvou39ys/raw/upload/v1766030028/documentos/boletin_PAULINA_CASTA%C3%83_O_VERGARA_2025_tjr9kz.pdf",
+          "type": "pdf",
+          "size": "163.9 KB",
+          "date": "2025-12-18T03:53:48.632Z"
+        },
+        {
+          "id": "documentos/EVIDENCIA_DE_LA_PRIMERA_ACTIVIDAD_nj0f5a.docx",
+          "name": "EVIDENCIA DE LA PRIMERA ACTIVIDAD.docx",
+          "url": "https://res.cloudinary.com/dcvou39ys/raw/upload/v1766030040/documentos/EVIDENCIA_DE_LA_PRIMERA_ACTIVIDAD_nj0f5a.docx",
           "type": "docx",
-          "size": "158.9 KB",
-          "date": "2025-12-18T00:00:14.048Z"
+          "size": "2434.6 KB",
+          "date": "2025-12-18T03:54:01.037Z"
+        },
+        {
+          "id": "documentos/frutas-mejoran-la-salud-cardiovascular-56a2995f5f9b58b7d0cc8b1b_wew47r.jpg",
+          "name": "frutas-mejoran-la-salud-cardiovascular-56a2995f5f9b58b7d0cc8b1b.jpg",
+          "url": "https://res.cloudinary.com/dcvou39ys/raw/upload/v1766030319/documentos/frutas-mejoran-la-salud-cardiovascular-56a2995f5f9b58b7d0cc8b1b_wew47r.jpg",
+          "type": "jpg",
+          "size": "8.7 KB",
+          "date": "2025-12-18T03:58:39.364Z"
+        },
+        {
+          "id": "documentos/CB_2_usgohl.jpg",
+          "name": "CB 2.jpg",
+          "url": "https://res.cloudinary.com/dcvou39ys/raw/upload/v1766031287/documentos/CB_2_usgohl.jpg",
+          "type": "jpg",
+          "size": "3915.7 KB",
+          "date": "2025-12-18T04:14:48.194Z"
+        },
+        {
+          "id": "documentos/CB_1_cjdhjs.jpg",
+          "name": "CB 1.jpg",
+          "url": "https://res.cloudinary.com/dcvou39ys/raw/upload/v1766031309/documentos/CB_1_cjdhjs.jpg",
+          "type": "jpg",
+          "size": "3355.8 KB",
+          "date": "2025-12-18T04:15:09.594Z"
+        },
+        {
+          "id": "documentos/CB_1_odgc66.jpg",
+          "name": "CB 1.jpg",
+          "url": "https://res.cloudinary.com/dcvou39ys/raw/upload/v1766031502/documentos/CB_1_odgc66.jpg",
+          "type": "jpg",
+          "size": "3991.0 KB",
+          "date": "2025-12-18T04:18:22.882Z"
+        },
+        {
+          "id": "documentos/IMG-20250123-WA0018-96bd2276_ll6vmh.jpeg",
+          "name": "IMG-20250123-WA0018-96bd2276.jpeg",
+          "url": "https://res.cloudinary.com/dcvou39ys/raw/upload/v1766032026/documentos/IMG-20250123-WA0018-96bd2276_ll6vmh.jpeg",
+          "type": "jpg",
+          "size": "95.2 KB",
+          "date": "2025-12-18T04:27:07.012Z"
+        },
+        {
+          "id": "documentos/mapaMental_vyqgaa.jpg",
+          "name": "mapaMental.jpg",
+          "url": "https://res.cloudinary.com/dcvou39ys/raw/upload/v1766032355/documentos/mapaMental_vyqgaa.jpg",
+          "type": "jpg",
+          "size": "180.7 KB",
+          "date": "2025-12-18T04:32:36.047Z"
         }
       ]
     },
@@ -61,17 +117,7 @@
       "image": "https://res.cloudinary.com/dcvou39ys/image/upload/v1764810721/emma-img/bvkmpqlotv38awtlircz.webp",
       "createdAt": "2025-12-04",
       "id": 5,
-      "public_id": "emma-img/bvkmpqlotv38awtlircz",
-      "documents": [
-        {
-          "id": "documentos/Folleto_Informativo_o8snrv",
-          "name": "Folleto Informativo",
-          "url": "https://res.cloudinary.com/dcvou39ys/image/upload/v1764810940/documentos/Folleto_Informativo_o8snrv.pdf",
-          "type": "pdf",
-          "size": "2180.1 KB",
-          "date": "2025-12-04T01:17:47.210Z"
-        }
-      ]
+      "public_id": "emma-img/bvkmpqlotv38awtlircz"
     }
   ],
   "roles": [

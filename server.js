@@ -82,69 +82,65 @@ server.post("/upload", upload.single("file"), async (req, res) => {
     }
 });
 
+
 server.post("/upload-document", upload.single("file"), (req, res) => {
-    const file = req.file;
-    if (!file) return res.status(400).json({ error: "Archivo requerido" });
+  const file = req.file;
+  if (!file) return res.status(400).json({ error: "Archivo requerido" });
 
-    const bufferStream = new stream.PassThrough();
-    bufferStream.end(file.buffer);
+  const bufferStream = new stream.PassThrough();
+  bufferStream.end(file.buffer);
 
-    cloudinary.uploader.upload_stream(
-        {
-            resource_type: "raw",
-            folder: "documentos",
-            use_filename: true,
-            unique_filename: false,
-            filename_override: file.originalname,
-            type: "authenticated",
-        },
-        (error, result) => {
-            if (error) {
-                console.error(error);
-                return res.status(500).json({ error: "Error subiendo documento" });
-            }
+  cloudinary.uploader.upload_stream(
+    {
+      resource_type: "raw",      // DOCX, PDF, etc.
+      folder: "documentos",
+      use_filename: true,
+    //   unique_filename: false,
+      filename_override: file.originalname,
+      type: "upload",            // ✅ público
+    },
+    (error, result) => {
+      if (error) {
+        console.error(error);
+        return res.status(500).json({ error: "Error subiendo documento" });
+      }
 
-            // URL temporal válida 5 min
-            const tempUrl = cloudinary.utils.private_download_url(
-                result.public_id,
-                null,
-                {
-                    resource_type: "raw",
-                    expires_at: Math.floor(Date.now() / 1000) + 300,
-                }
-            );
-
-            res.json({
-                public_id: result.public_id,  // Ej: "documentos/foto_1.docx"
-                original_name: file.originalname,
-                size: result.bytes,
-                format: result.format,
-                url: tempUrl,
-            });
-        }
-    ).end(file.buffer);
+      res.json({
+        public_id: result.public_id,
+        original_name: file.originalname,
+        size: result.bytes,
+        format: result.format,
+        url: result.secure_url,   // URL pública directa
+      });
+    }
+  ).end(file.buffer);
 });
+
 
 // =====================
 // 2️⃣ Endpoint: Obtener URL temporal de un documento existente
 // =====================
-server.get("/document/:publicId/download", (req, res) => {
+server.get("/document/:publicId", (req, res) => {
   const publicId = decodeURIComponent(req.params.publicId);
 
   try {
     const url = cloudinary.utils.private_download_url(
       publicId,
       null,
-      { resource_type: "raw", expires_at: Math.floor(Date.now()/1000)+300 }
+      {
+        resource_type: "raw",
+        expires_at: Math.floor(Date.now() / 1000) + 300, // 5 min
+      }
     );
 
-    // Redirigir al navegador a la URL temporal
+    // Redirige al navegador a la URL temporal
     res.redirect(url);
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "No se pudo generar la URL" });
   }
 });
+
 
 
 
