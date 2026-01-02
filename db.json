@@ -1,54 +1,39 @@
 {
   "users": [
     {
-      "email": "keiner@gmail.com",
-      "password": "$2a$10$e3wiuORS68LfA0Yr2qc.GuAiBflHCroH0hFI.MDe4asTZmBILx94.",
-      "name": "Keiner",
-      "lastName": "Jaramillo",
-      "department": "Sena",
+      "email": "wbvrbet@gmail.com",
+      "password": "$2a$10$xWQXvF7A1TBQCGHNaUwgmesEYEJak8ekhllwhnKSRtyRamruw/0Au",
+      "name": "prueba",
+      "lastName": "Hola",
+      "department": "lkdskdkd",
       "rol": "1",
       "status": "activo",
-      "profession": "Desarrollador",
-      "createdAt": "2025-11-30",
-      "id": 3,
+      "profession": "Loco",
+      "createdAt": "2025-12-21",
+      "id": 4,
       "documents": [
         {
-          "id": "documentos/boletin_PAULINA_CASTAÃ_O_VERGARA_2025_1_gwuaiq.pdf",
-          "name": "boletin_PAULINA_CASTAÑO_VERGARA_2025 (1).pdf",
-          "url": "https://res.cloudinary.com/dcvou39ys/raw/upload/v1766081121/documentos/boletin_PAULINA_CASTA%C3%83_O_VERGARA_2025_1_gwuaiq.pdf",
+          "id": "documentos/boletin_PAULINA_CASTAÃ_O_VERGARA_2025_ypbpkl.pdf",
+          "name": "boletin_PAULINA_CASTAÑO_VERGARA_2025.pdf",
+          "url": "https://res.cloudinary.com/dcvou39ys/raw/upload/v1766280998/documentos/boletin_PAULINA_CASTA%C3%83_O_VERGARA_2025_ypbpkl.pdf",
           "type": "pdf",
           "size": "163.9 KB",
-          "date": "2025-12-18T18:05:21.481Z",
-          "typeFile": "Hoja de Vida"
-        },
-        {
-          "id": "documentos/CB_1_1_nyg4rw.jpg",
-          "name": "CB 1 (1).jpg",
-          "url": "https://res.cloudinary.com/dcvou39ys/raw/upload/v1766081161/documentos/CB_1_1_nyg4rw.jpg",
-          "type": "jpg",
-          "size": "3355.8 KB",
-          "date": "2025-12-18T18:06:01.877Z",
+          "date": "2025-12-21T01:36:40.399Z",
           "typeFile": "Cédula"
-        },
-        {
-          "id": "documentos/foto_1_n2uttr.docx",
-          "name": "foto (1).docx",
-          "url": "https://res.cloudinary.com/dcvou39ys/raw/upload/v1766081164/documentos/foto_1_n2uttr.docx",
-          "type": "docx",
-          "size": "158.9 KB",
-          "date": "2025-12-18T18:06:04.798Z",
-          "typeFile": "Certificado de Estudios"
-        },
-        {
-          "id": "documentos/IMG-20250123-WA0018-96bd2276_o5swhl.jpeg",
-          "name": "IMG-20250123-WA0018-96bd2276.jpeg",
-          "url": "https://res.cloudinary.com/dcvou39ys/raw/upload/v1766081213/documentos/IMG-20250123-WA0018-96bd2276_o5swhl.jpeg",
-          "type": "jpg",
-          "size": "95.2 KB",
-          "date": "2025-12-18T18:06:53.113Z",
-          "typeFile": "Certificado de Estudios"
         }
       ]
+    },
+    {
+      "email": "keiner@gmail.com",
+      "password": "$2a$10$x9Kc45OHfBM6qVN3duZH9.TJknqjlnLndDesqL2zIwXazASedsZ4G",
+      "name": "keiner",
+      "lastName": "jaramillo",
+      "department": "Loco",
+      "rol": "1",
+      "status": "activo",
+      "profession": "Loco",
+      "createdAt": "2026-01-02",
+      "id": 5
     }
   ],
   "roles": [
@@ -130,7 +115,7 @@
           }
         }
       ],
-      "users": 38,
+      "users": 40,
       "id": 1
     }
   ],
@@ -149,5 +134,17 @@
       "id": 1
     }
   ],
-  "donaciones": []
+  "donaciones": [],
+  "plannings": [
+    {
+      "id": 6,
+      "name": "Programa de Responsabilidad Social",
+      "description": "Acciones de impacto social",
+      "startDate": "2024-01-01",
+      "endDate": "2024-12-31",
+      "status": "activo",
+      "responsible": "Sofía Herrera",
+      "goals": "Generar impacto positivo en la comunidad"
+    }
+  ]
 }

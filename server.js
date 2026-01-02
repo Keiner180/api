@@ -84,36 +84,36 @@ server.post("/upload", upload.single("file"), async (req, res) => {
 
 
 server.post("/upload-document", upload.single("file"), (req, res) => {
-  const file = req.file;
-  if (!file) return res.status(400).json({ error: "Archivo requerido" });
+    const file = req.file;
+    if (!file) return res.status(400).json({ error: "Archivo requerido" });
 
-  const bufferStream = new stream.PassThrough();
-  bufferStream.end(file.buffer);
+    const bufferStream = new stream.PassThrough();
+    bufferStream.end(file.buffer);
 
-  cloudinary.uploader.upload_stream(
-    {
-      resource_type: "raw",      // DOCX, PDF, etc.
-      folder: "documentos",
-      use_filename: true,
-    //   unique_filename: false,
-      filename_override: file.originalname,
-      type: "upload",            // ✅ público
-    },
-    (error, result) => {
-      if (error) {
-        console.error(error);
-        return res.status(500).json({ error: "Error subiendo documento" });
-      }
+    cloudinary.uploader.upload_stream(
+        {
+            resource_type: "raw",      // DOCX, PDF, etc.
+            folder: "documentos",
+            use_filename: true,
+            //   unique_filename: false,
+            filename_override: file.originalname,
+            type: "upload",            // ✅ público
+        },
+        (error, result) => {
+            if (error) {
+                console.error(error);
+                return res.status(500).json({ error: "Error subiendo documento" });
+            }
 
-      res.json({
-        public_id: result.public_id,
-        original_name: file.originalname,
-        size: result.bytes,
-        format: result.format,
-        url: result.secure_url,   // URL pública directa
-      });
-    }
-  ).end(file.buffer);
+            res.json({
+                public_id: result.public_id,
+                original_name: file.originalname,
+                size: result.bytes,
+                format: result.format,
+                url: result.secure_url,   // URL pública directa
+            });
+        }
+    ).end(file.buffer);
 });
 
 
@@ -121,49 +121,69 @@ server.post("/upload-document", upload.single("file"), (req, res) => {
 // 2️⃣ Endpoint: Obtener URL temporal de un documento existente
 // =====================
 server.get("/document/:publicId", (req, res) => {
-  const publicId = decodeURIComponent(req.params.publicId);
-
-  try {
-    const url = cloudinary.utils.private_download_url(
-      publicId,
-      null,
-      {
-        resource_type: "raw",
-        expires_at: Math.floor(Date.now() / 1000) + 300, // 5 min
-      }
-    );
-
-    // Redirige al navegador a la URL temporal
-    res.redirect(url);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "No se pudo generar la URL" });
-  }
-});
-
-
-
-
-
-
-
-
-
-
-
-// --- Eliminar imagen de Cloudinary ---
-server.delete("/delete-image/:folder/:id", async (req, res) => {
-    const { folder, id } = req.params;
-    const public_id = `${folder}/${id}`;
+    const publicId = decodeURIComponent(req.params.publicId);
 
     try {
-        const result = await cloudinary.uploader.destroy(public_id);
-        res.json({ ok: true, result });
+        const url = cloudinary.utils.private_download_url(
+            publicId,
+            null,
+            {
+                resource_type: "raw",
+                expires_at: Math.floor(Date.now() / 1000) + 300, // 5 min
+            }
+        );
+
+        // Redirige al navegador a la URL temporal
+        res.redirect(url);
     } catch (err) {
         console.error(err);
-        res.status(500).json({ error: "Error eliminando imagen" });
+        res.status(500).json({ error: "No se pudo generar la URL" });
     }
 });
+
+
+
+
+
+
+
+
+
+
+
+// --- Eliminar documento de Cloudinary ---
+server.delete("/delete-file", async (req, res) => {
+    try {
+        const { public_id, type } = req.query;
+        console.log(req.query);
+        
+
+        if (!public_id) {
+            return res.status(400).json({ message: "public_id requerido" });
+        }
+
+        const resourceType = type === "raw" ? "raw" : "image";
+
+        const result = await cloudinary.uploader.destroy(public_id, {
+            resource_type: resourceType,
+        });
+
+        if (result.result !== "ok") {
+            return res.status(404).json({
+                ok: false,
+                message: "Archivo no encontrado en Cloudinary",
+            });
+        }
+
+        res.json({ ok: true, result });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ ok: false, message: "Error eliminando archivo" });
+    }
+});
+
+
+
 
 server.get("/verify-token", (req, res) => {
     const auth = req.headers.authorization;
