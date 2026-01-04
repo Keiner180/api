@@ -17,11 +17,12 @@ const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
 
 // --- Configuración CORS ---
-server.use(cors({
+server.use(cors({   
     origin: [
         "http://localhost:5173",
         "http://localhost:5174",
-        "https://emma-25413.web.app"
+        "https://emma-25413.web.app",
+        "https://v3c3khq3-5173.use2.devtunnels.ms" 
     ],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],

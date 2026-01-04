@@ -33,7 +33,20 @@
       "status": "activo",
       "profession": "Loco",
       "createdAt": "2026-01-02",
-      "id": 5
+      "id": 5,
+      "image": "https://res.cloudinary.com/dcvou39ys/image/upload/v1767456276/emma-img/yxewaceid4zp3oaxadbh.jpg",
+      "public_id": "emma-img/yxewaceid4zp3oaxadbh",
+      "documents": [],
+      "tipoDocumento": "Tarjeta de Identidad",
+      "numeroDocumento": "1045427385",
+      "fechaNacimiento": "2025-12-29",
+      "numeroContacto": "3012485289",
+      "direccion": "km 7 antigua via guarne",
+      "currentOccupation": "hacer pereza dia y noche",
+      "modality": "Presencial",
+      "supportAreas": "En lo que me pongan hacer en esta vida",
+      "howDidYouHear": "Voz a voz",
+      "availableTime": "13 horas a 20 horas"
     }
   ],
   "roles": [
